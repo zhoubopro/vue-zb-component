@@ -1,0 +1,25 @@
+{
+  "name": "vue-zb-component",
+  "version": "1.0.0",
+  "description": "组件仓库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoubopro/vue-zb-component.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "zb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoubopro/vue-zb-component/issues"
+  },
+  "homepage": "https://github.com/zhoubopro/vue-zb-component#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
