@@ -18,3 +18,16 @@ parcel
 简写 npx parcel --no-cache index.html
 
 [can i use](www.caniuse.com)
+[chaijs](www.chaijs.com)
+[chai-spies]
+[color.adobe.com](https://color.adobe.com/zh/explore)
+用户体验的要素
+
+
+
+rm -rf .cache dist
+
+
+shell 
+control A first
+control E last
