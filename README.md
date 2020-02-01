@@ -31,3 +31,22 @@ rm -rf .cache dist
 shell 
 control A first
 control E last
+
+## Git
+```shell
+// 切换分支
+git checkout 
+// 新建分支
+git branch
+// 提交分支
+git push origin button-and-input:button-and-input
+
+```
+
+```css
+{
+flex-wrap: wrap;
+flex-shrink: 0;
+}
+
+```

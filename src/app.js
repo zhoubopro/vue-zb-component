@@ -3,11 +3,15 @@ import ButtonGroup from './component/button-group/index.js';
 import Button from './component/button/index.js';
 import Icon from './component/icon/index.js';
 import Input from './component/input/index.js';
+import Row from './component/row/index.js';
+import Col from './component/col/index.js';
 
 Vue.component('g-button-group', ButtonGroup);
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon);
 Vue.component('g-input', Input);
+Vue.component('g-row', Row);
+Vue.component('g-col', Col);
 
 new Vue({
   el: "#app",
@@ -15,6 +19,11 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false,
+  },
+  methods: {
+    inputChange(e){
+      console.log(e.target.value);
+    }
   }
 })
 
