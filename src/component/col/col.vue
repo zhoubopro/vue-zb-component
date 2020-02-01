@@ -1,10 +1,6 @@
 <template>
-  <div class="col" :class="[span && `col-${span}`, offset && `offset-${offset}`]"
-  :style="{paddingLeft: `${gutter/2}px`, paddingRight: `${gutter/2}px`}"
-    >
-    <div style="border: 1px solid green;height: 100px">
-      <slot></slot>
-    </div>
+  <div class="col" :class="colClass" :style="colStyle">
+    <slot></slot>
   </div>
 </template>
 
@@ -23,15 +19,30 @@
       //   type: [Number, String]
       // }
     },
-    data(){
-      return{
+    data () {
+      return {
         gutter: 0
       }
     },
-    created(){
+    computed: {
+      colClass () {
+        const { span, offset } = this;
+        return [
+          span && `col-${span}`,
+          offset && `offset-${offset}`
+        ]
+      },
+      colStyle () {
+        return {
+          paddingLeft: `${this.gutter / 2}px`,
+          paddingRight: `${this.gutter / 2}px`
+        }
+      }
+    },
+    created () {
       console.log('col created');
     },
-    mounted(){
+    mounted () {
       console.log('col mounted');
     }
   }
