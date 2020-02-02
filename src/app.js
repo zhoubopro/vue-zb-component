@@ -21,7 +21,7 @@ new Vue({
     loading3: false,
   },
   methods: {
-    inputChange(e){
+    inputChange (e) {
       console.log(e.target.value);
     }
   }
@@ -29,9 +29,11 @@ new Vue({
 
 // 单元测试
 import chai from 'chai';
+
 let expect = chai.expect
 
 import spies from 'chai-spies';
+
 chai.use(spies)
 try {
 // 测试按钮含有 icon
@@ -115,6 +117,6 @@ try {
     // button.$el.remove();
     // button.$destroy();
   }
-}catch (e){
+} catch (e) {
   console.log(e)
 }
