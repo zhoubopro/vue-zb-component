@@ -2,45 +2,24 @@
   "name": "vue-zb-component",
   "version": "1.0.0",
   "description": "组件仓库",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhoubopro/vue-zb-component.git"
-  },
-  "keywords": [
-    "vue"
-  ],
-  "author": "zb",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhoubopro/vue-zb-component/issues"
-  },
-  "homepage": "https://github.com/zhoubopro/vue-zb-component#readme",
   "dependencies": {
-    "vue": "^2.6.11",
-    "vue-hot-reload-api": "^2.3.4"
+    "core-js": "^3.4.4",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.1.1",
-    "chai": "^4.2.0",
-    "chai-spies": "^1.0.0",
-    "karma": "^4.4.1",
-    "karma-chai-spies": "^0.1.4",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-mocha": "^1.3.0",
-    "karma-sinon-chai": "^2.0.2",
-    "mocha": "^7.0.0",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.24.4",
-    "sinon": "^8.1.0",
-    "sinon-chai": "^3.4.0",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-unit-mocha": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "chai": "^4.1.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
