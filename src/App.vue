@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <g-button icon="set">
-      按钮
-    </g-button>
+    <g-slide class="wrapper" :selected.sync="selected" :timer="timer">
+      <g-slide-item :name="item" v-for="(item, index) in items" :key="index">
+        <div class="box">{{item}}</div>
+      </g-slide-item>
+    </g-slide>
   </div>
 </template>
 
 <script>
-  import Button from './component/button'
+  import GSlide from './component/slide/slide'
+  import GSlideItem from './component/slide/slide-item'
 
   export default {
     name: 'app',
     components: {
-      'g-button': Button
+      GSlide,
+      GSlideItem
+    },
+    data () {
+      return {
+        selected: 'first',
+        timer: 3,
+        items: ['first', 'two', 'three']
+      }
+    },
+    created(){
+
     }
   }
 </script>
@@ -41,5 +55,18 @@
   }
   body {
     font-size: var(--font-size);
+  }
+  .wrapper{
+    margin: 40px;
+  }
+  .box {
+    width: 100%;
+    height: 350px;
+    background: deepskyblue;
+    color: #ffffff;
+    font-size: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
