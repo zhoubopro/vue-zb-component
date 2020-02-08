@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55def8cb-9af1-4918-9904-91418c16a446" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tests/unit/slide.spec.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/fixtures/db.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/component/slide/slide.vue" afterPath="$PROJECT_DIR$/src/component/slide/slide.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/component/slide/slide-item.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -46,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/component/slide/slide.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -55,8 +52,8 @@
       <file leaf-file-name="slide.spec.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/unit/slide.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="200" column="11" lean-forward="false" selection-start-line="200" selection-start-column="11" selection-end-line="200" selection-end-column="11" />
+            <state relative-caret-position="264">
+              <caret line="177" column="8" lean-forward="false" selection-start-line="177" selection-start-column="8" selection-end-line="177" selection-end-column="8" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1581172327081" expanded="true" signature="634:698" ph="..." />
@@ -88,8 +85,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -119,12 +116,12 @@
       <find>onMouseEnter</find>
       <find>g-slide-item</find>
       <find>name</find>
-      <find>consol</find>
       <find>SlideItem</find>
       <find>Slide</find>
       <find>console</find>
-      <find>wrapper</find>
       <find>items</find>
+      <find>wrapper</find>
+      <find>consol</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/component/slide/slide-item.vue" />
         <option value="$PROJECT_DIR$/src/component/slide/slide.vue" />
         <option value="$PROJECT_DIR$/tests/unit/slide.spec.js" />
+        <option value="$PROJECT_DIR$/tests/fixtures/db.js" />
       </list>
     </option>
   </component>
@@ -210,24 +208,6 @@
             <path>
               <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="slide" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
@@ -300,7 +280,7 @@
       <workItem from="1579081525027" duration="14192000" />
       <workItem from="1579487714467" duration="14159000" />
       <workItem from="1580476202148" duration="5046000" />
-      <workItem from="1580559691341" duration="35208000" />
+      <workItem from="1580559691341" duration="35800000" />
     </task>
     <task id="LOCAL-00001" summary="init vue">
       <created>1578918519221</created>
@@ -393,11 +373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581000582050</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="slide test.spec">
+      <created>1581172481839</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1581172481839</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77552000" />
+    <option name="totallyTimeSpent" value="78144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -489,21 +476,14 @@
     <MESSAGE value="重构row col" />
     <MESSAGE value="使用vue-cli启动" />
     <MESSAGE value="slide" />
-    <option name="LAST_COMMIT_MESSAGE" value="slide" />
+    <MESSAGE value="slide test.spec" />
+    <option name="LAST_COMMIT_MESSAGE" value="slide test.spec" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="57" column="15" lean-forward="false" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/button/button.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -915,7 +895,7 @@
     <entry file="file://$PROJECT_DIR$/src/component/slide/slide-item.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -923,15 +903,23 @@
     <entry file="file://$PROJECT_DIR$/src/component/slide/slide.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/fixtures/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17843">
+          <caret line="0" column="408664" lean-forward="false" selection-start-line="0" selection-start-column="408664" selection-end-line="0" selection-end-column="408664" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/slide.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="200" column="11" lean-forward="false" selection-start-line="200" selection-start-column="11" selection-end-line="200" selection-end-column="11" />
+        <state relative-caret-position="264">
+          <caret line="177" column="8" lean-forward="false" selection-start-line="177" selection-start-column="8" selection-end-line="177" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1581172327081" expanded="true" signature="634:698" ph="..." />
