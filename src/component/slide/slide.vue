@@ -11,17 +11,19 @@
     </div>
 
     <div class="g-slide-dots">
-      <span @click="prevSlide()">
+      <span @click="prevSlide()" data-action="prev">
         <g-icon name="arrowleft"></g-icon>
       </span>
       <span
         v-for="n in childrenLength"
         :class="{active: selectedIndex === n-1}"
         @click="selectDots(n-1)"
+        :key="n"
+        :data-index="n-1"
       >
         {{n}}
       </span>
-      <span @click="nextSlide()">
+      <span @click="nextSlide()" data-action="next">
         <g-icon name="arrowright"></g-icon>
       </span>
     </div>
@@ -69,7 +71,9 @@
     },
     mounted () {
       this.updateChildren();
-      this.automatically();
+      if(this.autoPlay){
+        this.automatically();
+      }
       this.childrenLength = this.items.length
     },
     updated () {
