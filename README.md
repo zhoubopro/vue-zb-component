@@ -50,3 +50,12 @@ flex-shrink: 0;
 }
 
 ```
+
+```
+注释：sockjs
+1. 找到/node_modules/sockjs-client/dist/sockjs.js 
+
+2.找到代码的 1605行  
+
+3.刷新，搞定
+```

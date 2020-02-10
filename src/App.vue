@@ -1,31 +1,37 @@
 <template>
   <div id="app">
-    <g-slide class="wrapper" :selected.sync="selected" :timer="timer">
-      <g-slide-item :name="item" v-for="(item, index) in items" :key="index">
-        <div class="box">{{item}}</div>
-      </g-slide-item>
-    </g-slide>
+    <g-nav :selected.sync="selected" :multiple="multiple">
+      <g-nav-item name="home">首页</g-nav-item>
+      <g-sub-nav>
+        <template slot="title">关于</template>
+        <g-nav-item name="qiye">企业文化</g-nav-item>
+        <g-nav-item name="item">开发团队</g-nav-item>
+        <g-nav-item name="other">联系电话</g-nav-item>
+      </g-sub-nav>
+      <g-nav-item name="other">其他</g-nav-item>
+    </g-nav>
   </div>
 </template>
 
 <script>
-  import GSlide from './component/slide/slide'
-  import GSlideItem from './component/slide/slide-item'
+  import GNav from './component/nav/nav'
+  import GNavItem from './component/nav/nav-item'
+  import GSubNav from './component/nav/sub-nav'
 
   export default {
     name: 'app',
     components: {
-      GSlide,
-      GSlideItem
+      GNav,
+      GNavItem,
+      GSubNav
     },
     data () {
       return {
-        selected: 'first',
-        timer: 3,
-        items: ['first', 'two', 'three']
+        selected: ['qiye'],
+        multiple: false
       }
     },
-    created(){
+    created () {
 
     }
   }
@@ -56,17 +62,5 @@
   body {
     font-size: var(--font-size);
   }
-  .wrapper{
-    margin: 40px;
-  }
-  .box {
-    width: 100%;
-    height: 350px;
-    background: deepskyblue;
-    color: #ffffff;
-    font-size: 30px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 </style>
