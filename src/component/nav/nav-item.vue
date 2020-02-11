@@ -28,17 +28,39 @@
     },
     methods:{
       onClick(){
-        this.$emit('add:selected', this.name)
+        this.root.namePath = [];
+        this.$parent.updateNamePath && this.$parent.updateNamePath();
+        this.$emit('add:selected', this.name);
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
+  /*@import "../../styles";*/
+  $blue: #4a90e2;
   .g-nav-item {
     padding: 10px 20px;
     &.selected {
-      background: #795da3;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 2px solid $blue;
+      }
+    }
+  }
+
+  .g-sub-nav .g-nav-item{
+    &.selected{
+      color: #333;
+      background: #eee;
+      &::after{
+        display: none;
+      }
     }
   }
 </style>

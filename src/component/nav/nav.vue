@@ -1,5 +1,6 @@
 <template>
   <div class="g-nav">
+    {{namePath}}
     <slot></slot>
   </div>
 </template>
@@ -22,7 +23,8 @@
     },
     data () {
       return {
-        items: []
+        items: [],
+        namePath: []
       }
     },
     computed: {
@@ -73,6 +75,9 @@
 <style scoped lang="scss">
   .g-nav {
     display: flex;
-    border: 1px solid red;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    cursor: default;
+    user-select: none;
   }
 </style>
