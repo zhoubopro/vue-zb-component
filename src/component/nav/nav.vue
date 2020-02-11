@@ -7,6 +7,9 @@
 <script>
   export default {
     name: "g-nav",
+    provide () {
+      return { root: this }
+    },
     props: {
       selected: {
         type: Array,
@@ -17,11 +20,15 @@
         default: false
       }
     },
-
-    computed: {
-      items () {
-        return this.$children.filter(vm => vm.$options.name === "g-nav-item");
+    data () {
+      return {
+        items: []
       }
+    },
+    computed: {
+      // items () {
+      //   return this.$children.filter(vm => vm.$options.name === "g-nav-item");
+      // }
     },
     mounted () {
       this.updateChildren();
@@ -31,6 +38,9 @@
       this.updateChildren();
     },
     methods: {
+      addItem (vm) {
+        this.items.push(vm)
+      },
       updateChildren () {
         this.items.forEach(vm => {
           if (this.selected.indexOf(vm.name) >= 0) {

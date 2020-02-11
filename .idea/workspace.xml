@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="55def8cb-9af1-4918-9904-91418c16a446" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
+      <change beforePath="$PROJECT_DIR$/src/component/nav/nav-item.vue" afterPath="$PROJECT_DIR$/src/component/nav/nav-item.vue" />
+      <change beforePath="$PROJECT_DIR$/src/component/nav/nav.vue" afterPath="$PROJECT_DIR$/src/component/nav/nav.vue" />
+      <change beforePath="$PROJECT_DIR$/src/component/nav/sub-nav.vue" afterPath="$PROJECT_DIR$/src/component/nav/sub-nav.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,10 +23,10 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="168">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding>
-                <element signature="e#459#497#0" expanded="true" />
+                <element signature="e#847#885#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -31,8 +35,8 @@
       <file leaf-file-name="nav.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/nav.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1113">
-              <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,8 +45,8 @@
       <file leaf-file-name="nav-item.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="342">
+              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -51,8 +55,8 @@
       <file leaf-file-name="sub-nav.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/sub-nav.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="735">
+              <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -107,12 +111,12 @@
       <find>name</find>
       <find>SlideItem</find>
       <find>Slide</find>
-      <find>items</find>
       <find>wrapper</find>
       <find>consol</find>
       <find>add</find>
-      <find>multiply</find>
       <find>console</find>
+      <find>items</find>
+      <find>multiply</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/component/nav/nav-item-sub.vue" />
         <option value="$PROJECT_DIR$/node_modules/sockjs-client/dist/sockjs.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/component/nav/nav.vue" />
         <option value="$PROJECT_DIR$/src/component/nav/nav-item.vue" />
+        <option value="$PROJECT_DIR$/src/component/nav/nav.vue" />
         <option value="$PROJECT_DIR$/src/component/nav/sub-nav.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
       </list>
@@ -224,7 +228,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
   </component>
   <component name="RecentsManager">
@@ -272,7 +276,7 @@
       <workItem from="1579081525027" duration="14192000" />
       <workItem from="1579487714467" duration="14159000" />
       <workItem from="1580476202148" duration="5046000" />
-      <workItem from="1580559691341" duration="45308000" />
+      <workItem from="1580559691341" duration="48787000" />
     </task>
     <task id="LOCAL-00001" summary="init vue">
       <created>1578918519221</created>
@@ -386,11 +390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581323673103</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="nav 基础">
+      <created>1581323694577</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581323694577</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87652000" />
+    <option name="totallyTimeSpent" value="91131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -916,36 +927,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/nav/sub-nav.vue">
+    <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/nav/nav.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1113">
-          <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
+    <entry file="file://$PROJECT_DIR$/src/component/nav/sub-nav.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="735">
+          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="168">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
-            <element signature="e#459#497#0" expanded="true" />
+            <element signature="e#847#885#0" expanded="true" />
           </folding>
         </state>
       </provider>

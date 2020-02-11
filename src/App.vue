@@ -6,7 +6,17 @@
         <template slot="title">关于</template>
         <g-nav-item name="qiye">企业文化</g-nav-item>
         <g-nav-item name="item">开发团队</g-nav-item>
-        <g-nav-item name="other">联系电话</g-nav-item>
+        <g-sub-nav>
+          <template slot="title">联系方式</template>
+          <g-nav-item name="wechat">weChat</g-nav-item>
+          <g-nav-item name="qq">QQ</g-nav-item>
+          <g-sub-nav>
+            <template slot="title">Tel</template>
+            <g-nav-item name="yd">移动</g-nav-item>
+            <g-nav-item name="lt">联通</g-nav-item>
+            <g-nav-item name="dx">电信</g-nav-item>
+          </g-sub-nav>
+        </g-sub-nav>
       </g-sub-nav>
       <g-nav-item name="other">其他</g-nav-item>
     </g-nav>
