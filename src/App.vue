@@ -43,7 +43,7 @@
     },
     data () {
       return {
-        selected: ['qiye'],
+        selected: 'home',
         multiple: false
       }
     },
@@ -52,7 +52,8 @@
     },
     methods:{
       onChange(selected){
-        alert(selected)
+        // alert(selected)
+        console.log(selected);
       }
     },
     watch:{

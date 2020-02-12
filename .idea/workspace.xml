@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55def8cb-9af1-4918-9904-91418c16a446" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/unit/nav.spec.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
       <change beforePath="$PROJECT_DIR$/src/component/nav/nav-item.vue" afterPath="$PROJECT_DIR$/src/component/nav/nav-item.vue" />
       <change beforePath="$PROJECT_DIR$/src/component/nav/nav.vue" afterPath="$PROJECT_DIR$/src/component/nav/nav.vue" />
-      <change beforePath="$PROJECT_DIR$/src/component/nav/sub-nav.vue" afterPath="$PROJECT_DIR$/src/component/nav/sub-nav.vue" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/slide.spec.js" afterPath="$PROJECT_DIR$/tests/unit/slide.spec.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+            <state relative-caret-position="253">
+              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#g-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#997#1035#0" expanded="true" />
@@ -33,11 +34,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="nav.spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/unit/nav.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="63" column="4" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+                <marker date="1581510560240" expanded="true" signature="741:870" ph="..." />
+                <marker date="1581510560240" expanded="true" signature="1385:1574" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slide.spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/slide.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="180" column="36" lean-forward="true" selection-start-line="180" selection-start-column="36" selection-end-line="180" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="nav.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/nav.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+            <state relative-caret-position="1260">
+              <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -46,8 +71,8 @@
       <file leaf-file-name="nav-item.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+            <state relative-caret-position="227">
+              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -58,16 +83,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="7401" column="0" lean-forward="false" selection-start-line="7401" selection-start-column="0" selection-end-line="7401" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,8 +101,8 @@
       <file leaf-file-name="sub-nav.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/nav/sub-nav.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3213">
-              <caret line="153" column="13" lean-forward="false" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+            <state relative-caret-position="166">
+              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
               <folding>
                 <element signature="e#786#839#0" expanded="true" />
               </folding>
@@ -128,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>newIndex</find>
-      <find>names</find>
       <find>selectedIndex</find>
       <find>reverse</find>
       <find>-</find>
@@ -137,7 +150,6 @@
       <find>first</find>
       <find>prevSilde</find>
       <find>$ch</find>
-      <find>selected</find>
       <find>consoll</find>
       <find>onMouseEnter</find>
       <find>g-slide-item</find>
@@ -155,9 +167,12 @@
       <find>click-outside</find>
       <find>$border-radius</find>
       <find>20</find>
-      <find>conso</find>
       <find>中午啊啊啊啊中午啊啊啊啊中午啊啊啊啊</find>
+      <find>conso</find>
+      <find>index</find>
       <find>transition</find>
+      <find>selected</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/component/icon/icon.vue" />
         <option value="$PROJECT_DIR$/src/component/slide/slide-item.vue" />
         <option value="$PROJECT_DIR$/src/component/slide/slide.vue" />
-        <option value="$PROJECT_DIR$/tests/unit/slide.spec.js" />
         <option value="$PROJECT_DIR$/tests/fixtures/db.js" />
         <option value="$PROJECT_DIR$/src/component/nav/index.js" />
         <option value="$PROJECT_DIR$/src/component/nav/nav-item-sub.vue" />
@@ -203,10 +217,12 @@
         <option value="$PROJECT_DIR$/src/styles/_var.scss" />
         <option value="$PROJECT_DIR$/vue.config.js" />
         <option value="$PROJECT_DIR$/src/utils/click-outside.js" />
-        <option value="$PROJECT_DIR$/src/component/nav/nav.vue" />
-        <option value="$PROJECT_DIR$/src/component/nav/nav-item.vue" />
         <option value="$PROJECT_DIR$/src/component/nav/sub-nav.vue" />
+        <option value="$PROJECT_DIR$/tests/unit/slide.spec.js" />
+        <option value="$PROJECT_DIR$/src/component/nav/nav-item.vue" />
+        <option value="$PROJECT_DIR$/src/component/nav/nav.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/tests/unit/nav.spec.js" />
       </list>
     </option>
   </component>
@@ -271,6 +287,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue-zb-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-zb-component" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -298,11 +325,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/unit" />
       <recent name="$PROJECT_DIR$/src/component/slide" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src/component/button-group" />
-      <recent name="$PROJECT_DIR$/src/asset" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,7 +364,7 @@
       <workItem from="1579081525027" duration="14192000" />
       <workItem from="1579487714467" duration="14159000" />
       <workItem from="1580476202148" duration="5046000" />
-      <workItem from="1580559691341" duration="62392000" />
+      <workItem from="1580559691341" duration="64262000" />
     </task>
     <task id="LOCAL-00001" summary="init vue">
       <created>1578918519221</created>
@@ -472,11 +499,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581433377216</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="nav">
+      <created>1581508082925</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1581508082925</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104736000" />
+    <option name="totallyTimeSpent" value="106606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -574,27 +608,14 @@
     <MESSAGE value="nav 基础" />
     <MESSAGE value="支持多层级nav" />
     <MESSAGE value="横向nav" />
-    <option name="LAST_COMMIT_MESSAGE" value="横向nav" />
+    <MESSAGE value="nav" />
+    <option name="LAST_COMMIT_MESSAGE" value="nav" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="420">
-            <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-            <folding>
-              <marker date="1581316266714" expanded="true" signature="60:87" ph="{...}" />
-              <marker date="1581316266714" expanded="true" signature="585:621" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -895,34 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/slide.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="181" column="37" lean-forward="true" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-            <marker date="1581172327081" expanded="true" signature="634:698" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="732:796" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="830:894" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="1368:1432" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="1466:1530" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="1564:1628" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="2013:2077" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="2111:2175" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="2209:2273" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="2814:2878" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="2912:2976" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="3010:3074" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="3576:3640" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="3674:3738" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="3772:3836" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="4396:4460" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="4494:4558" ph="..." />
-            <marker date="1581172327081" expanded="true" signature="4592:4656" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/slide/slide-item.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1001,39 +994,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
+    <entry file="file://$PROJECT_DIR$/tests/unit/slide.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+        <state relative-caret-position="452">
+          <caret line="180" column="36" lean-forward="true" selection-start-line="180" selection-start-column="36" selection-end-line="180" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/nav/nav.vue">
+    <entry file="file://$PROJECT_DIR$/src/component/nav/nav-item.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        <state relative-caret-position="227">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/nav/sub-nav.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="153" column="13" lean-forward="false" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+        <state relative-caret-position="166">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
           <folding>
             <element signature="e#786#839#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/nav/nav.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="60" column="34" lean-forward="true" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+        <state relative-caret-position="253">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#g-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#997#1035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/nav.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="63" column="4" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <marker date="1581510560240" expanded="true" signature="741:870" ph="..." />
+            <marker date="1581510560240" expanded="true" signature="1385:1574" ph="..." />
           </folding>
         </state>
       </provider>
