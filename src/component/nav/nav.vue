@@ -1,6 +1,5 @@
 <template>
-  <div class="g-nav">
-    {{namePath}}
+  <div class="g-nav" :class="{vertical}">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +8,10 @@
   export default {
     name: "g-nav",
     provide () {
-      return { root: this }
+      return {
+        root: this,
+        vertical: this.vertical
+      }
     },
     props: {
       selected: {
@@ -17,6 +19,10 @@
         default: () => []
       },
       multiple: {
+        type: Boolean,
+        default: false
+      },
+      vertical: {
         type: Boolean,
         default: false
       }
@@ -79,5 +85,9 @@
     color: #333;
     cursor: default;
     user-select: none;
+    &.vertical {
+      flex-direction: column;
+      border: 1px solid #eee;
+    }
   }
 </style>

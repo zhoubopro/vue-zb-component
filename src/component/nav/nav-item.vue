@@ -1,8 +1,9 @@
 <template>
   <div
     class="g-nav-item"
-    :class="{selected}"
+    :class="{selected, vertical}"
     @click="onClick"
+    :data-name="name"
   >
     <slot></slot>
   </div>
@@ -11,7 +12,7 @@
 <script>
   export default {
     name: "g-nav-item",
-    inject:['root'],
+    inject: ['root', 'vertical'],
     props: {
       name: {
         type: String,
@@ -23,11 +24,11 @@
         selected: false
       }
     },
-    created(){
-      this.root.addItem(this)
+    created () {
+      this.root.addItem(this);
     },
-    methods:{
-      onClick(){
+    methods: {
+      onClick () {
         this.root.namePath = [];
         this.$parent.updateNamePath && this.$parent.updateNamePath();
         this.$emit('add:selected', this.name);
@@ -41,24 +42,34 @@
   $blue: #4a90e2;
   .g-nav-item {
     padding: 10px 20px;
-    &.selected {
-      position: relative;
-      &::after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        border-bottom: 2px solid $blue;
+    position: relative;
+    &:not(.vertical) {
+      &.selected {
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          border-bottom: 2px solid $blue;
+        }
       }
     }
+    &.vertical {
+      &.selected {
+        color: $blue;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
-
-  .g-sub-nav .g-nav-item{
-    &.selected{
+  .g-sub-nav .g-nav-item:not(.vertical) {
+    &.selected {
       color: #333;
       background: #eee;
-      &::after{
+      &::after {
         display: none;
       }
     }

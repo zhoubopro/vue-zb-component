@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <g-nav :selected.sync="selected" :multiple="multiple">
-      <g-nav-item name="home">首页</g-nav-item>
+    <g-nav :selected.sync="selected" :multiple="multiple" style="width: 200px;" @update:selected="onChange">
+      <g-nav-item name="home">
+        首页
+      </g-nav-item>
       <g-sub-nav name="about">
         <template slot="title">关于</template>
         <g-nav-item name="qiye">企业文化</g-nav-item>
@@ -47,6 +49,16 @@
     },
     created () {
 
+    },
+    methods:{
+      onChange(selected){
+        alert(selected)
+      }
+    },
+    watch:{
+      selected(newVal){
+        console.log(newVal);
+      }
     }
   }
 </script>
