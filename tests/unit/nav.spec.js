@@ -9,7 +9,7 @@ import Vue from 'vue'
 
 chai.use(sinonChai)
 
-xdescribe('Nav.vue', () => {
+describe('Nav.vue', () => {
   it('存在.', () => {
     expect(Nav).to.exist
   })

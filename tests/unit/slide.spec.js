@@ -8,7 +8,7 @@ import Vue from 'vue'
 
 chai.use(sinonChai)
 
-xdescribe('Slide.vue', () => {
+describe('Slide.vue', () => {
 
   it('存在.', () => {
     expect(Slide).to.exist
