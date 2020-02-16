@@ -1,67 +1,30 @@
 <template>
   <div id="app">
-    <g-nav :selected.sync="selected" :multiple="multiple" style="width: 200px;" @update:selected="onChange">
-      <g-nav-item name="home">
-        首页
-      </g-nav-item>
-      <g-sub-nav name="about">
-        <template slot="title">关于</template>
-        <g-nav-item name="qiye">企业文化</g-nav-item>
-        <g-nav-item name="item">开发团队</g-nav-item>
-        <g-sub-nav name="tel">
-          <template slot="title">联系方式</template>
-          <g-nav-item name="wechat">weChat</g-nav-item>
-          <g-nav-item name="qq">QQ</g-nav-item>
-          <g-sub-nav name="phone">
-            <template slot="title">Tel</template>
-            <g-nav-item name="yd">移动</g-nav-item>
-            <g-nav-item name="lt">联通</g-nav-item>
-            <g-nav-item name="dx">电信</g-nav-item>
-          </g-sub-nav>
-        </g-sub-nav>
-      </g-sub-nav>
-      <g-nav-item name="other">其他</g-nav-item>
-    </g-nav>
-    <div>
-      中午啊啊啊啊
-      中午啊啊啊啊
-    </div>
+    <g-pages :total-page="20" :current-page.sync="currentPage"></g-pages>
   </div>
 </template>
 
 <script>
-  import GNav from './component/nav/nav'
-  import GNavItem from './component/nav/nav-item'
-  import GSubNav from './component/nav/sub-nav'
+  import GPages from './component/pager/pager'
 
   export default {
     name: 'app',
     components: {
-      GNav,
-      GNavItem,
-      GSubNav
+      GPages,
     },
     data () {
       return {
-        selected: 'home',
-        multiple: false
+        currentPage: 1
       }
     },
     created () {
 
     },
-    methods:{
-      onChange(selected){
-        // alert(selected)
-        console.log(selected);
-      }
-    },
-    watch:{
-      selected(newVal){
-        console.log(newVal);
-      }
-    }
+    methods: {},
+    watch: {}
   }
+
+
 </script>
 
 <style lang="scss">
