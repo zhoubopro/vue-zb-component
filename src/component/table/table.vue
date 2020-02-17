@@ -6,13 +6,13 @@
       <tr>
         <th><input type="checkbox" @change="onChangeAllItems" ref="allChecked"></th>
         <th v-if="numberVisible">#</th>
-        <th v-for="column in columns">
+        <th v-for="column in columns" :key="column.field">
           {{column.text}}
         </th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(item,index) in dataSource">
+      <tr v-for="(item,index) in dataSource" :key="item.id">
         <td>
           <input
             type="checkbox"
@@ -22,7 +22,7 @@
         </td>
         <td v-if="numberVisible">{{index + 1}}</td>
         <template v-for="column in columns">
-          <td>
+          <td :key="column.field">
             {{item[column.field]}}
           </td>
         </template>
@@ -78,17 +78,13 @@
         if (selected) {
           copyItems.push(item)
         } else {
-          copyItems.splice(copyItems.indexOf(item), 1);
+          copyItems = copyItems.filter(i => i.id !== item.id)
         }
         this.$emit('update:selectedItems', copyItems);
-        // this.$emit('change-item', { selected: e.target.checked, item, index });
       },
       onChangeAllItems (e) {
         let selected = e.target.checked;
         this.$emit('update:selectedItems', selected ? this.dataSource : []);
-        // this.dataSource.map((item, index) => {
-        //   this.$emit('change-item', { selected, item, index });
-        // })
       }
     },
     watch: {
