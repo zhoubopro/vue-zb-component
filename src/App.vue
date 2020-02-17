@@ -5,8 +5,8 @@
         bordered
         compact
         :columns="columns"
+        :selected-items.sync="selected"
         :data-source="dataSource"
-        @change-item="onItem"
       />
     </div>
     {{selected}}
@@ -51,16 +51,16 @@
 
     },
     methods: {
-      onItem (object) {
-        console.log(object);
-        const { selected, item, index } = object
-        if (selected) {
-          this.selected.push(item)
-        } else {
-          let index = this.selected.indexOf(item);
-          this.selected.splice(index, 1);
-        }
-      }
+      // onItem (object) {
+      //   console.log(object);
+      //   const { selected, item, index } = object
+      //   if (selected) {
+      //     this.selected.push(item)
+      //   } else {
+      //     let index = this.selected.indexOf(item);
+      //     this.selected.splice(index, 1);
+      //   }
+      // }
     },
     watch: {}
   }

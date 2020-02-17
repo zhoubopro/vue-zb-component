@@ -1,9 +1,10 @@
 <template>
   <div class="g-table-wrapper">
-    <table class="g-table" :class="{bordered, compact, striped}">
+    <table
+      class="g-table" :class="{bordered, compact, striped}">
       <thead>
       <tr>
-        <th><input type="checkbox"></th>
+        <th><input type="checkbox" @change="onChangeAllItems" ref="allChecked"></th>
         <th v-if="numberVisible">#</th>
         <th v-for="column in columns">
           {{column.text}}
@@ -12,7 +13,13 @@
       </thead>
       <tbody>
       <tr v-for="(item,index) in dataSource">
-        <th><input type="checkbox" @change="onchangeItem(item, index, $event)"></th>
+        <td>
+          <input
+            type="checkbox"
+            @change="onchangeItem(item, index, $event)"
+            :checked="inSelectedItems(item)"
+          />
+        </td>
         <td v-if="numberVisible">{{index + 1}}</td>
         <template v-for="column in columns">
           <td>
@@ -33,6 +40,10 @@
         type: Boolean,
         default: true
       },
+      selectedItems: {
+        type: Array,
+        default: () => []
+      },
       compact: {
         type: Boolean,
         default: false
@@ -43,7 +54,10 @@
       },
       dataSource: {
         type: Array,
-        require: true
+        require: true,
+        validator (array) {
+          return array.filter(item => item.id === undefined).length > 0 ? false : true;
+        }
       },
       numberVisible: {
         type: Boolean,
@@ -55,8 +69,38 @@
       }
     },
     methods: {
+      inSelectedItems (item) {
+        return this.selectedItems.filter(i => i.id === item.id).length > 0;
+      },
       onchangeItem (item, index, e) {
-        this.$emit('change-item', { selected: e.target.checked, item, index });
+        let selected = e.target.checked;
+        let copyItems = JSON.parse(JSON.stringify(this.selectedItems));
+        if (selected) {
+          copyItems.push(item)
+        } else {
+          copyItems.splice(copyItems.indexOf(item), 1);
+        }
+        this.$emit('update:selectedItems', copyItems);
+        // this.$emit('change-item', { selected: e.target.checked, item, index });
+      },
+      onChangeAllItems (e) {
+        let selected = e.target.checked;
+        this.$emit('update:selectedItems', selected ? this.dataSource : []);
+        // this.dataSource.map((item, index) => {
+        //   this.$emit('change-item', { selected, item, index });
+        // })
+      }
+    },
+    watch: {
+      // 半选
+      selectedItems () {
+        if (this.selectedItems.length === this.dataSource.length) {
+          this.$refs.allChecked.indeterminate = false
+        } else if (this.selectedItems.length === 0) {
+          this.$refs.allChecked.indeterminate = false
+        } else {
+          this.$refs.allChecked.indeterminate = true
+        }
       }
     }
   }
