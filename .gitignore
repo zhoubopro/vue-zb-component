@@ -6,6 +6,7 @@ dist
 .idea/
 .idea
 *.iml
+*.xml
 out
 gen
 
