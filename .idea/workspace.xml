@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55def8cb-9af1-4918-9904-91418c16a446" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/component/table/table.vue" afterPath="$PROJECT_DIR$/src/component/table/table.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="table.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/table/table.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+            <state relative-caret-position="152">
+              <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -288,7 +287,7 @@
       <workItem from="1581685192889" duration="4802000" />
       <workItem from="1581765586952" duration="2013000" />
       <workItem from="1581821842795" duration="4778000" />
-      <workItem from="1581917295602" duration="3149000" />
+      <workItem from="1581917295602" duration="3203000" />
     </task>
     <task id="LOCAL-00001" summary="init vue">
       <created>1578918519221</created>
@@ -479,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581920025247</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="循环添加key， &#10;解决全选bug">
+      <created>1581921321274</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1581921321274</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173068000" />
+    <option name="totallyTimeSpent" value="173122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -587,7 +593,8 @@
     <MESSAGE value="pager" />
     <MESSAGE value="table base" />
     <MESSAGE value="全选/半选状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="全选/半选状态" />
+    <MESSAGE value="循环添加key， &#10;解决全选bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="循环添加key， &#10;解决全选bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -938,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/table/table.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+        <state relative-caret-position="152">
+          <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
           <folding />
         </state>
       </provider>
