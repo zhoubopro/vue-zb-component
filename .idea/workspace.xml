@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55def8cb-9af1-4918-9904-91418c16a446" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,11 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="table.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/table/table.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
               <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -63,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onMouseEnter</find>
       <find>g-slide-item</find>
       <find>name</find>
       <find>SlideItem</find>
@@ -93,6 +103,7 @@
       <find>bordered</find>
       <find>stripe</find>
       <find>onChangeAllItems</find>
+      <find>field</find>
     </findStrings>
     <replaceStrings>
       <replace>g</replace>
@@ -107,7 +118,6 @@
         <option value="$PROJECT_DIR$/node_modules/button.js" />
         <option value="$PROJECT_DIR$/button.js" />
         <option value="$PROJECT_DIR$/src/component/button/index.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/asset/font/demo.css" />
         <option value="$PROJECT_DIR$/src/asset/font/iconfont.css" />
         <option value="$PROJECT_DIR$/src/component/icon/index.js" />
@@ -152,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/component/table/index.js" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/component/table/table.vue" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -287,7 +298,7 @@
       <workItem from="1581685192889" duration="4802000" />
       <workItem from="1581765586952" duration="2013000" />
       <workItem from="1581821842795" duration="4778000" />
-      <workItem from="1581917295602" duration="3203000" />
+      <workItem from="1581917295602" duration="3299000" />
     </task>
     <task id="LOCAL-00001" summary="init vue">
       <created>1578918519221</created>
@@ -485,11 +496,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581921321274</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="循环添加key， &#10;解决全选bug">
+      <created>1581921327520</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1581921327520</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173122000" />
+    <option name="totallyTimeSpent" value="173218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -790,13 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/validate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -947,6 +958,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
           <folding />
         </state>
       </provider>

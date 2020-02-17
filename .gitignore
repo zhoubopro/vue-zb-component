@@ -1,4 +1,12 @@
 node_modules/
-.idea
 .cache
 dist
+
+# IntelliJ project files
+.idea/
+.idea
+*.iml
+out
+gen
+
+echo '.idea' >> .gitignore
