@@ -7,6 +7,8 @@
         :columns="columns"
         :selected-items.sync="selected"
         :data-source="dataSource"
+        :order-by.sync="orderBy"
+        @update:orderBy="handleOrder"
       />
     </div>
     {{selected}}
@@ -32,17 +34,22 @@
         columns: [
           { text: '姓名', field: 'name' },
           { text: '分数', field: 'score' },
+          { text: '性别', field: 'gender' },
         ],
+        orderBy: {
+          name: true,
+          score: 'desc'
+        },
         dataSource: [
-          { id: 1, name: '周博', score: 100 },
-          { id: 2, name: '周周', score: 80 },
-          { id: 3, name: 'zz', score: 99 },
-          { id: 4, name: 'xx', score: 70 },
-          { id: 5, name: 'cc', score: 89 },
-          { id: 6, name: 'dd', score: 98 },
-          { id: 7, name: 'ee', score: 66 },
-          { id: 8, name: 'ff', score: 77 },
-          { id: 9, name: 'gg', score: 89 },
+          { id: 1, name: '周博', score: 100, gender: '男' },
+          { id: 2, name: '周周', score: 80, gender: '男' },
+          { id: 3, name: 'zz', score: 99, gender: '男' },
+          { id: 4, name: 'xx', score: 70, gender: '男' },
+          { id: 5, name: 'cc', score: 89, gender: '男' },
+          { id: 6, name: 'dd', score: 98, gender: '男' },
+          { id: 7, name: 'ee', score: 66, gender: '男' },
+          { id: 8, name: 'ff', score: 77, gender: '男' },
+          { id: 9, name: 'gg', score: 89, gender: '男' },
         ],
         selected: []
       }
@@ -61,6 +68,10 @@
       //     this.selected.splice(index, 1);
       //   }
       // }
+      handleOrder(){
+        console.log('xx')
+        this.dataSource = this.dataSource.sort((a, b) => b.score - a.score)
+      }
     },
     watch: {}
   }

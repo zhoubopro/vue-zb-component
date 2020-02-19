@@ -14,7 +14,23 @@
         </th>
         <th v-if="numberVisible">#</th>
         <th v-for="column in columns" :key="column.field">
-          {{column.text}}
+          <div class="g-table-header">
+            {{column.text}}
+            <span
+              v-if="column.field in orderBy"
+              class="g-table-sorter"
+              @click="changeOrderBy(column.field)"
+            >
+            <g-icon
+              name="up-arrow"
+              :class="{active: orderBy[column.field] === 'asc'}">
+            </g-icon>
+            <g-icon
+              name="down-arrow"
+              :class="{active: orderBy[column.field] === 'desc'}">
+            </g-icon>
+          </span>
+          </div>
         </th>
       </tr>
       </thead>
@@ -40,9 +56,18 @@
 </template>
 
 <script>
+  import GIcon from '../icon/icon';
+
   export default {
     name: "g-table",
+    components: {
+      GIcon,
+    },
     props: {
+      orderBy: {
+        type: Object,
+        default: () => ({}),
+      },
       striped: {
         type: Boolean,
         default: true
@@ -93,6 +118,18 @@
       }
     },
     methods: {
+      changeOrderBy (key) {
+        const copy = JSON.parse(JSON.stringify(this.orderBy));
+        let oldValue = copy[key];
+        if (oldValue === 'asc') {
+          copy[key] = 'desc';
+        } else if (oldValue === 'desc') {
+          copy[key] = true;
+        } else {
+          copy[key] = 'asc';
+        }
+        this.$emit('update:orderBy', copy)
+      },
       inSelectedItems (item) {
         return this.selectedItems.filter(i => i.id === item.id).length > 0;
       },
@@ -158,6 +195,24 @@
             }
           }
         }
+      }
+      &-sorter {
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0 4px;
+        cursor: pointer;
+        svg {
+          width: 8px;
+          height: 8px;
+          fill: $grey;
+          &.active {
+            fill: red;
+          }
+        }
+      }
+      &-header {
+        display: flex;
+        align-items: center;
       }
       th, td {
         border-bottom: 1px solid $tgrey;
