@@ -1,26 +1,29 @@
 <template>
-  <div class="g-table-wrapper">
-    <table
-      class="g-table" :class="{bordered, compact, striped}">
-      <thead>
-      <tr>
-        <th>
-          <input
-            type="checkbox"
-            @change="onChangeAllItems"
-            ref="allChecked"
-            :checked="areAllItemsSelected"
-          />
-        </th>
-        <th v-if="numberVisible">#</th>
-        <th v-for="column in columns" :key="column.field">
-          <div class="g-table-header">
-            {{column.text}}
-            <span
-              v-if="column.field in orderBy"
-              class="g-table-sorter"
-              @click="changeOrderBy(column.field)"
-            >
+  <div class="g-table-wrapper" ref="wrapper">
+    <div :style="{height, overflow: 'auto'}">
+      <table
+        class="g-table" :class="{bordered, compact, striped}"
+        ref="table"
+      >
+        <thead>
+        <tr>
+          <th>
+            <input
+              type="checkbox"
+              @change="onChangeAllItems"
+              ref="allChecked"
+              :checked="areAllItemsSelected"
+            />
+          </th>
+          <th v-if="numberVisible">#</th>
+          <th v-for="column in columns" :key="column.field">
+            <div class="g-table-header">
+              {{column.text}}
+              <span
+                v-if="column.field in orderBy"
+                class="g-table-sorter"
+                @click="changeOrderBy(column.field)"
+              >
             <g-icon
               name="up-arrow"
               :class="{active: orderBy[column.field] === 'asc'}">
@@ -30,28 +33,33 @@
               :class="{active: orderBy[column.field] === 'desc'}">
             </g-icon>
           </span>
-          </div>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(item,index) in dataSource" :key="item.id">
-        <td>
-          <input
-            type="checkbox"
-            @change="onchangeItem(item, index, $event)"
-            :checked="inSelectedItems(item)"
-          />
-        </td>
-        <td v-if="numberVisible">{{index + 1}}</td>
-        <template v-for="column in columns">
-          <td :key="column.field">
-            {{item[column.field]}}
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item,index) in dataSource" :key="item.id">
+          <td>
+            <input
+              type="checkbox"
+              @change="onchangeItem(item, index, $event)"
+              :checked="inSelectedItems(item)"
+            />
           </td>
-        </template>
-      </tr>
-      </tbody>
-    </table>
+          <td v-if="numberVisible">{{index + 1}}</td>
+          <template v-for="column in columns">
+            <td :key="column.field">
+              {{item[column.field]}}
+            </td>
+          </template>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div v-if="loading" class="g-table-loading">
+      <g-icon name="set"></g-icon>
+    </div>
   </div>
 </template>
 
@@ -64,9 +72,16 @@
       GIcon,
     },
     props: {
+      height: {
+        type: String
+      },
       orderBy: {
         type: Object,
         default: () => ({}),
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       },
       striped: {
         type: Boolean,
@@ -117,7 +132,30 @@
         return equal;
       }
     },
+    mounted () {
+      this.table2 = this.$refs.table.cloneNode(true);
+      this.onWindowResize = this.updateHeadersWidth();
+      window.addEventListener('resize', () => this.onWindowResize)
+    },
     methods: {
+      updateHeadersWidth () {
+        let table2 = this.table2;
+        table2.classList.add('g-table-copy');
+        let tableHeader = Array.from(this.$refs.table.children).filter(node => node.tagName.toLowerCase() === 'thead')[0]
+        let tableHeader2;
+        Array.from(table2.children).map(node => {
+          if (node.tagName.toLowerCase() !== 'thead') {
+            node.remove()
+          } else {
+            tableHeader2 = node
+          }
+        });
+        Array.from(tableHeader.children[0].children).map((th, index) => {
+          const { width } = th.getBoundingClientRect();
+          tableHeader2.children[0].children[index].style = width + 'px';
+        });
+        this.$refs.wrapper.appendChild(table2);
+      },
       changeOrderBy (key) {
         const copy = JSON.parse(JSON.stringify(this.orderBy));
         let oldValue = copy[key];
@@ -159,6 +197,10 @@
           this.$refs.allChecked.indeterminate = true
         }
       }
+    },
+    beforeDestroy(){
+      window.removeEventListener('remove', this.onWindowResize);
+      this.table2.remove();
     }
   }
 </script>
@@ -166,10 +208,10 @@
 <style scoped lang="scss">
   $tgrey: darken($grey, 10%);
   .g-table-wrapper {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    overflow: auto;
     .g-table {
-      width: 98%;
+      width: 100%;
       border-collapse: collapse;
       border-spacing: 0;
       border-bottom: 1px solid $tgrey;
@@ -218,6 +260,33 @@
         border-bottom: 1px solid $tgrey;
         text-align: left;
         padding: 8px;
+      }
+      /*&-wrapper{*/
+      /*position: relative;*/
+      /*overflow: auto;*/
+      /*}*/
+      &-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.7);
+        svg {
+          width: 30px;
+          height: 30px;
+          animation: spin 1.5s infinite linear;
+        }
+      }
+      &-copy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
       }
     }
   }

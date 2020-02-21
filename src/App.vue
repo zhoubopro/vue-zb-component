@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div style="margin-top: 20px">
+    <div style="width: 98%;margin:20px auto;">
       <g-table
         bordered
         compact
@@ -9,6 +9,8 @@
         :data-source="dataSource"
         :order-by.sync="orderBy"
         @update:orderBy="handleOrder"
+        :loading="loading"
+        :height="height"
       />
     </div>
     {{selected}}
@@ -42,16 +44,29 @@
         },
         dataSource: [
           { id: 1, name: '周博', score: 100, gender: '男' },
-          { id: 2, name: '周周', score: 80, gender: '男' },
+          { id: 2, name: '周周', score: 80, gender: '女' },
           { id: 3, name: 'zz', score: 99, gender: '男' },
-          { id: 4, name: 'xx', score: 70, gender: '男' },
-          { id: 5, name: 'cc', score: 89, gender: '男' },
+          { id: 4, name: 'xx', score: 70, gender: '女' },
+          { id: 5, name: 'cc', score: 89, gender: '女' },
           { id: 6, name: 'dd', score: 98, gender: '男' },
-          { id: 7, name: 'ee', score: 66, gender: '男' },
-          { id: 8, name: 'ff', score: 77, gender: '男' },
+          { id: 7, name: 'ee', score: 66, gender: '女' },
+          { id: 8, name: 'ff', score: 77, gender: '女' },
           { id: 9, name: 'gg', score: 89, gender: '男' },
+          { id: 10, name: 'ii', score: 89, gender: '男' },
+          { id: 11, name: '周博', score: 100, gender: '女' },
+          { id: 12, name: '周周', score: 80, gender: '女' },
+          { id: 13, name: 'zz', score: 99, gender: '男' },
+          { id: 14, name: 'xx', score: 70, gender: '女' },
+          { id: 15, name: 'cc', score: 89, gender: '男' },
+          { id: 16, name: 'dd', score: 98, gender: '男' },
+          { id: 17, name: 'ee', score: 66, gender: '女' },
+          { id: 18, name: 'ff', score: 77, gender: '男' },
+          { id: 19, name: 'gg', score: 89, gender: '男' },
+          { id: 20, name: 'qq', score: 99, gender: '男' },
         ],
-        selected: []
+        selected: [],
+        loading: false,
+        height: '400px'
       }
     },
     created () {
@@ -69,8 +84,13 @@
       //   }
       // }
       handleOrder(){
-        console.log('xx')
-        this.dataSource = this.dataSource.sort((a, b) => b.score - a.score)
+        console.log('xx');
+        this.loading = true;
+        setTimeout(()=>{
+          this.dataSource = this.dataSource.sort((a, b) => b.score - a.score);
+          this.loading = false;
+        }, 1000);
+
       }
     },
     watch: {}
