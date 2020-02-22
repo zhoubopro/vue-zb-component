@@ -36,14 +36,15 @@
           </span>
             </div>
           </th>
-          <th></th>
+          <th ref="actionsHeader" v-if="$scopedSlots.default"></th>
         </tr>
         </thead>
         <tbody>
         <template v-for="(item,index) in dataSource">
           <tr :key="item.id">
             <td v-if="expendField" :style="{width: '50px'}" class="g-table-center">
-              <g-icon name="arrowright" class="g-table-expendIcon" @click="expendItem(item.id)" />
+              <g-icon :class="[expendClass(item.id)]" name="arrowright" class="g-table-expendIcon"
+                      @click="expendItem(item.id)" />
             </td>
             <td v-if="checkable" :style="{width: '50px'}" class="g-table-center">
               <input
@@ -59,7 +60,7 @@
               </td>
             </template>
             <td v-if="$scopedSlots.default">
-              <div>
+              <div ref="actions" style="display: inline-block;">
                 <slot :item="item"></slot>
               </div>
             </td>
@@ -141,10 +142,16 @@
     },
     data () {
       return {
-        expendedIds: []
+        expendedIds: [],
+        open
       }
     },
     computed: {
+      expendClass () {
+        return function (id) {
+          return this.inExpendedIds(id) ? 'expend' : '';
+        }
+      },
       areAllItemsSelected () {
         let a = this.dataSource.map(item => item.id).sort();
         let b = this.selectedItems.map(item => item.id).sort();
@@ -168,6 +175,9 @@
         if (this.expendField) {
           result += 1
         }
+        if (this.$scopedSlots.default) {
+          result += 1
+        }
         return result
       }
     },
@@ -182,6 +192,25 @@
       table2.appendChild(thead);
       this.$refs.wrapper.appendChild(table2);
       window.addEventListener('resize', () => this.onWindowResize)
+
+
+      // console.log(this.$scopedSlots);
+      // console.log(this.$slots);
+      if (this.$scopedSlots.default) {
+        let div = this.$refs.actions[0]
+        let { width } = div.getBoundingClientRect()
+        let parent = div.parentNode
+        let styles = getComputedStyle(parent)
+        let paddingLeft = styles.getPropertyValue('padding-left')
+        let paddingRight = styles.getPropertyValue('padding-right')
+        let borderLeft = styles.getPropertyValue('border-left-width')
+        let borderRight = styles.getPropertyValue('border-right-width')
+        let width2 = width + parseInt(paddingRight) + parseInt(paddingRight) + parseInt(borderLeft) + parseInt(borderRight) + 'px'
+        this.$refs.actionsHeader.style.width = width2
+        this.$refs.actions.map(div => {
+          div.parentNode.style.width = width2
+        })
+      }
     },
     methods: {
       inExpendedIds (id) {
@@ -331,6 +360,9 @@
       }
       &-center {
         text-align: center !important;
+      }
+      .expend {
+        transform: rotate(90deg);
       }
     }
   }
