@@ -1,13 +1,14 @@
 <template>
   <div class="g-table-wrapper" ref="wrapper">
-    <div :style="{height, overflow: 'auto'}">
+    <div :style="{height: height + 'px', overflow: 'auto'}" ref="tableWrapper">
       <table
         class="g-table" :class="{bordered, compact, striped}"
         ref="table"
       >
         <thead>
         <tr>
-          <th>
+          <th v-if="expendField" :style="{width: '50px'}" class="g-table-center"></th>
+          <th v-if="checkable" :style="{width: '50px'}" class="g-table-center">
             <input
               type="checkbox"
               @change="onChangeAllItems"
@@ -15,8 +16,8 @@
               :checked="areAllItemsSelected"
             />
           </th>
-          <th v-if="numberVisible">#</th>
-          <th v-for="column in columns" :key="column.field">
+          <th :style="{width: '50px'}" v-if="numberVisible">#</th>
+          <th v-for="column in columns" :key="column.field" :style="{width: column.width +'px'}">
             <div class="g-table-header">
               {{column.text}}
               <span
@@ -35,24 +36,40 @@
           </span>
             </div>
           </th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(item,index) in dataSource" :key="item.id">
-          <td>
-            <input
-              type="checkbox"
-              @change="onchangeItem(item, index, $event)"
-              :checked="inSelectedItems(item)"
-            />
-          </td>
-          <td v-if="numberVisible">{{index + 1}}</td>
-          <template v-for="column in columns">
-            <td :key="column.field">
-              {{item[column.field]}}
+        <template v-for="(item,index) in dataSource">
+          <tr :key="item.id">
+            <td v-if="expendField" :style="{width: '50px'}" class="g-table-center">
+              <g-icon name="arrowright" class="g-table-expendIcon" @click="expendItem(item.id)" />
             </td>
-          </template>
-        </tr>
+            <td v-if="checkable" :style="{width: '50px'}" class="g-table-center">
+              <input
+                type="checkbox"
+                @change="onchangeItem(item, index, $event)"
+                :checked="inSelectedItems(item)"
+              />
+            </td>
+            <td :style="{width: '50px'}" v-if="numberVisible">{{index + 1}}</td>
+            <template v-for="column in columns">
+              <td :style="{width: column.width +'px'}" :key="column.field">
+                {{item[column.field]}}
+              </td>
+            </template>
+            <td v-if="$scopedSlots.default">
+              <div>
+                <slot :item="item"></slot>
+              </div>
+            </td>
+          </tr>
+          <tr v-if="inExpendedIds(item.id)">
+            <td :colspan="columns.length + expendedCellColSpan">
+              {{item[expendField] || '-'}}
+            </td>
+          </tr>
+        </template>
         </tbody>
       </table>
     </div>
@@ -73,7 +90,10 @@
     },
     props: {
       height: {
-        type: String
+        type: Number
+      },
+      expendField: {
+        type: String,
       },
       orderBy: {
         type: Object,
@@ -113,6 +133,15 @@
       bordered: {
         type: Boolean,
         default: false
+      },
+      checkable: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data () {
+      return {
+        expendedIds: []
       }
     },
     computed: {
@@ -130,31 +159,40 @@
           }
         }
         return equal;
+      },
+      expendedCellColSpan () {
+        let result = 0;
+        if (this.checkable) {
+          result += 1
+        }
+        if (this.expendField) {
+          result += 1
+        }
+        return result
       }
     },
     mounted () {
-      this.table2 = this.$refs.table.cloneNode(true);
-      this.onWindowResize = this.updateHeadersWidth();
+      let table2 = this.$refs.table.cloneNode(false);
+      this.table2 = table2
+      table2.classList.add('g-table-copy');
+      let thead = this.$refs.table.children[0];
+      let { height } = thead.getBoundingClientRect();
+      this.$refs.tableWrapper.style.marginTop = height + 'px';
+      this.$refs.tableWrapper.style.height = this.height - height + 'px'
+      table2.appendChild(thead);
+      this.$refs.wrapper.appendChild(table2);
       window.addEventListener('resize', () => this.onWindowResize)
     },
     methods: {
-      updateHeadersWidth () {
-        let table2 = this.table2;
-        table2.classList.add('g-table-copy');
-        let tableHeader = Array.from(this.$refs.table.children).filter(node => node.tagName.toLowerCase() === 'thead')[0]
-        let tableHeader2;
-        Array.from(table2.children).map(node => {
-          if (node.tagName.toLowerCase() !== 'thead') {
-            node.remove()
-          } else {
-            tableHeader2 = node
-          }
-        });
-        Array.from(tableHeader.children[0].children).map((th, index) => {
-          const { width } = th.getBoundingClientRect();
-          tableHeader2.children[0].children[index].style = width + 'px';
-        });
-        this.$refs.wrapper.appendChild(table2);
+      inExpendedIds (id) {
+        return this.expendedIds.indexOf(id) >= 0;
+      },
+      expendItem (id) {
+        if (this.inExpendedIds(id)) {
+          this.expendedIds.splice(this.expendedIds.indexOf(id), 1)
+        } else {
+          this.expendedIds.push(id)
+        }
       },
       changeOrderBy (key) {
         const copy = JSON.parse(JSON.stringify(this.orderBy));
@@ -198,8 +236,7 @@
         }
       }
     },
-    beforeDestroy(){
-      window.removeEventListener('remove', this.onWindowResize);
+    beforeDestroy () {
       this.table2.remove();
     }
   }
@@ -287,6 +324,13 @@
         left: 0;
         width: 100%;
         background: white;
+      }
+      &-expendIcon {
+        width: 10px;
+        height: 10px;
+      }
+      &-center {
+        text-align: center !important;
       }
     }
   }

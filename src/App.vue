@@ -11,7 +11,13 @@
         @update:orderBy="handleOrder"
         :loading="loading"
         :height="height"
-      />
+        expend-field="description"
+      >
+        <template slot-scope="row">
+          <button @click="edit(row)">编辑</button>
+          <button @click="view(row)">查看</button>
+        </template>
+      </g-table>
     </div>
     {{selected}}
     <div style="margin-top: 20px">
@@ -34,8 +40,8 @@
       return {
         currentPage: 1,
         columns: [
-          { text: '姓名', field: 'name' },
-          { text: '分数', field: 'score' },
+          { text: '姓名', field: 'name', width: 100 },
+          { text: '分数', field: 'score', width: 100 },
           { text: '性别', field: 'gender' },
         ],
         orderBy: {
@@ -43,8 +49,8 @@
           score: 'desc'
         },
         dataSource: [
-          { id: 1, name: '周博', score: 100, gender: '男' },
-          { id: 2, name: '周周', score: 80, gender: '女' },
+          { id: 1, name: '周博', score: 100, gender: '男', description: 'xxxx xxxx' },
+          { id: 2, name: '周周', score: 80, gender: '女', description: 'yyyy xxxx' },
           { id: 3, name: 'zz', score: 99, gender: '男' },
           { id: 4, name: 'xx', score: 70, gender: '女' },
           { id: 5, name: 'cc', score: 89, gender: '女' },
@@ -66,13 +72,20 @@
         ],
         selected: [],
         loading: false,
-        height: '400px'
+        height: 400
       }
     },
     created () {
 
     },
     methods: {
+      edit (row) {
+        console.log('edit', row);
+      },
+      view (row) {
+        console.log('view', row);
+      },
+
       // onItem (object) {
       //   console.log(object);
       //   const { selected, item, index } = object
@@ -83,10 +96,10 @@
       //     this.selected.splice(index, 1);
       //   }
       // }
-      handleOrder(){
+      handleOrder () {
         console.log('xx');
         this.loading = true;
-        setTimeout(()=>{
+        setTimeout(() => {
           this.dataSource = this.dataSource.sort((a, b) => b.score - a.score);
           this.loading = false;
         }, 1000);
