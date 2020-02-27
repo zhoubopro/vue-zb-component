@@ -1,111 +1,90 @@
 <template>
-  <div id="app">
-    <div style="width: 98%;margin:20px auto;">
-      <g-table
-        bordered
-        compact
-        :columns="columns"
-        :selected-items.sync="selected"
-        :data-source="dataSource"
-        :order-by.sync="orderBy"
-        @update:orderBy="handleOrder"
-        :loading="loading"
-        :height="height"
-        expend-field="description"
-      >
-        <template slot-scope="row">
-          <button @click="edit(row)">编辑</button>
-          <button @click="view(row)">查看</button>
-        </template>
-      </g-table>
-    </div>
-    {{selected}}
-    <div style="margin-top: 20px">
-      <g-pages :total-page="20" :current-page.sync="currentPage"></g-pages>
+  <div id="app" style="display: flex;justify-content: center;">
+    <div style="border: 1px solid #ccc;">
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
+      <g-sticky :distance="100" style="width: 600px;">
+        <div style="border: 1px solid red;">
+          <img src="http://www.reignwood.com/media/1706/logo.jpg" alt="">
+        </div>
+      </g-sticky>
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
+
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
+
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
+
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
+
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+      <p>段落4</p>
+      <p>段落5</p>
+      <p>段落6</p>
+      <p>段落7</p>
+      <p>段落8</p>
+      <p>段落9</p>
     </div>
   </div>
 </template>
 
 <script>
-  import GPages from './component/pager/pager'
-  import GTable from './component/table/table'
+  import GSticky from './component/sticky/sticky';
 
   export default {
     name: 'app',
     components: {
-      GPages,
-      GTable
+      GSticky,
     },
     data () {
       return {
-        currentPage: 1,
-        columns: [
-          { text: '姓名', field: 'name', width: 100 },
-          { text: '分数', field: 'score', width: 100 },
-          { text: '性别', field: 'gender' },
-        ],
-        orderBy: {
-          name: true,
-          score: 'desc'
-        },
-        dataSource: [
-          { id: 1, name: '周博', score: 100, gender: '男', description: 'xxxx xxxx' },
-          { id: 2, name: '周周', score: 80, gender: '女', description: 'yyyy xxxx' },
-          { id: 3, name: 'zz', score: 99, gender: '男' },
-          { id: 4, name: 'xx', score: 70, gender: '女' },
-          { id: 5, name: 'cc', score: 89, gender: '女' },
-          { id: 6, name: 'dd', score: 98, gender: '男' },
-          { id: 7, name: 'ee', score: 66, gender: '女' },
-          { id: 8, name: 'ff', score: 77, gender: '女' },
-          { id: 9, name: 'gg', score: 89, gender: '男' },
-          { id: 10, name: 'ii', score: 89, gender: '男' },
-          { id: 11, name: '周博', score: 100, gender: '女' },
-          { id: 12, name: '周周', score: 80, gender: '女' },
-          { id: 13, name: 'zz', score: 99, gender: '男' },
-          { id: 14, name: 'xx', score: 70, gender: '女' },
-          { id: 15, name: 'cc', score: 89, gender: '男' },
-          { id: 16, name: 'dd', score: 98, gender: '男' },
-          { id: 17, name: 'ee', score: 66, gender: '女' },
-          { id: 18, name: 'ff', score: 77, gender: '男' },
-          { id: 19, name: 'gg', score: 89, gender: '男' },
-          { id: 20, name: 'qq', score: 99, gender: '男' },
-        ],
-        selected: [],
-        loading: false,
-        height: 400
+        fileList: []
       }
     },
     created () {
 
     },
-    methods: {
-      edit (row) {
-        console.log('edit', row);
-      },
-      view (row) {
-        console.log('view', row);
-      },
-
-      // onItem (object) {
-      //   console.log(object);
-      //   const { selected, item, index } = object
-      //   if (selected) {
-      //     this.selected.push(item)
-      //   } else {
-      //     let index = this.selected.indexOf(item);
-      //     this.selected.splice(index, 1);
-      //   }
-      // }
-      handleOrder () {
-        console.log('xx');
-        this.loading = true;
-        setTimeout(() => {
-          this.dataSource = this.dataSource.sort((a, b) => b.score - a.score);
-          this.loading = false;
-        }, 1000);
-
-      }
-    },
+    methods: {},
     watch: {}
   }
 
@@ -137,5 +116,7 @@
   body {
     font-size: var(--font-size);
   }
-
+  img{
+    max-width: 100%;
+  }
 </style>
